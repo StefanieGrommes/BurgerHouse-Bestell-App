@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger House</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./assets/logos/bestellapp_favicon2.svg" type="image/x-icon">
+    <script src="./script.js"></script>
+    <script src="./scripts/array.js"></script>
+</head>
+<body onload="init()">
+    <header>
+        <div class="header_elements"><img src="./assets/logos/bestellapp_favicon2.svg" alt="bestell_app favicon" class="header_images"></div>
+        <div class="header_elements"><img src="./assets/logos/burger_menu.png" alt="menu_img" class="header_images"></div>
+    </header>
+  
+    <main>
+       <section class="hero_section">
+            <div class="hero_img_container">
+            </div>
+            <div class="burger_logo"><img src="./assets/logos/logo.svg" alt="logo_bestellapp"></div>
+            <div class="lower_hero_part">
+                <div class="headline_and_rating_container">
+                    <div class="headline"><h1 class="orange_fill">Burger</h1> <h1>House</h1></div>
+                    <div class="star_rating"><img src="./assets/img/star_rating.png" alt="star_rating"></div>
+                    </div>
+                <div class="slogan"> <p>The best of Burgers, Pizza and Greens, all in one great place.</p></div>
+            </div>
+       </section>
+       <section class="dishes_navigation_container">
+            <div class="dishes_navigation">
+                <h2>&#10149</h2>
+                <a href="http://"><h2>Burger & Sandwiches </h2></a>
+                <a href="http://"><h2>Pizza (30cm)</h2></a>
+                <a href="http://"><h2>Salate</h2></a>
+            </div>
+       </section>
+       <section class="main_dishes">
+
+            <div class="main_dishes_orange_bg">
+                <div class="main_dishes_headline_container">
+                    <div class="headline_img_container"><img src="./assets/logos/icon_burger_sandwiches_category.svg" alt="" id="headline_img"></div>
+                    <div id="main_dishes_headline"><h2>Burgers & Sandwiches</h2></div>  
+                </div>
+            </div>
+
+            <div class="menu_card">
+
+                <div class="meal_component">
+                    <div class="meal_img_container">
+                        <img src="./assets/img/veggie_mushroom_black_burger.jpg" alt="" id="meal_img">
+                    </div>
+                    <div class="meal_details">
+                        <div class="meal_name_and_description">
+                            <div><h3>HEADLINE </h3></div>
+                            <div><p>description xxxxxxxxxxxxxxxxxxxxxxxxx </p></div>
+                        </div>
+                        <div class="price_and_order_btn">
+                            <div id="meal_price"><h3>16,90€</h3></div>
+                            <button type="submit" class="order_btn">Add to basket</button>
+                        </div>
+                    </div>
+                        
+
+                </div>
+            </div>
+       </section>
+    </main>
+    <footer>
+        <div class="copyright_elements">
+                <div class="footer_link">
+                    <img src="./assets/img/copyright.svg" alt="copyright" class="copyright_img">
+                    <p>2025 BurgerHouse</p>
+                </div>
+        </div>
+        <a href="http://" class="footer_link">Imprint</a>
+        <a href="http://" class="footer_link">Cookie Preferences</a>
+    </footer>
+    
+</body>
+</html>
