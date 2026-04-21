@@ -6,8 +6,9 @@
     <title>Burger House</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./assets/logos/bestellapp_favicon2.svg" type="image/x-icon">
+    <script src="./scripts /array.js"></script>
     <script src="./script.js"></script>
-    <script src="./scripts/array.js"></script>
+    
 </head>
 <body onload="init()">
     <header>
@@ -36,36 +37,16 @@
                 <a href="http://"><h2>Salate</h2></a>
             </div>
        </section>
-       <section class="main_dishes">
-
-            <div class="main_dishes_orange_bg">
-                <div class="main_dishes_headline_container">
-                    <div class="headline_img_container"><img src="./assets/logos/icon_burger_sandwiches_category.svg" alt="" id="headline_img"></div>
-                    <div id="main_dishes_headline"><h2>Burgers & Sandwiches</h2></div>  
-                </div>
+       <section class="categorys_and_meals">
+            <div id="category_container">
             </div>
-
-            <div class="menu_card">
-
-                <div class="meal_component">
-                    <div class="meal_img_container">
-                        <img src="./assets/img/veggie_mushroom_black_burger.jpg" alt="" id="meal_img">
-                    </div>
-                    <div class="meal_details">
-                        <div class="meal_name_and_description">
-                            <div><h3>HEADLINE </h3></div>
-                            <div><p>description xxxxxxxxxxxxxxxxxxxxxxxxx </p></div>
-                        </div>
-                        <div class="price_and_order_btn">
-                            <div id="meal_price"><h3>16,90€</h3></div>
-                            <button type="submit" class="order_btn">Add to basket</button>
-                        </div>
-                    </div>
-                        
-
-                </div>
-            </div>
-       </section>
+            <dialog class="open_basket closed_basket" id="my_basket">
+                    <header>WARENKORB</header>
+                    <main>INHALT</main>
+                    <button class="order_now">jetzt bestellen</button>
+                </dialog>
+            
+        </section>
     </main>
     <footer>
         <div class="copyright_elements">
