@@ -50,23 +50,25 @@ function showMealComponents(indexMealComponent,indexCategory){
                         </div>
                         <div class="price_and_order_btn">
                             <div id="meal_price"><h3>${meal.price}€</h3></div>
-                            <button type="submit" onclick="addToBasket()"class="order_btn">Add to basket</button>
+                            <button type="submit" onclick="addToBasket(${indexMealComponent})" class="order_btn">Add to basket</button>
                         </div>
                     </div>       
                 </div>
             </div>`
 }
 
-function addToBasket(){
-    const myBasket = document.getElementById("my_basket")
-    myBasket.showModal();
-    myBasket.classList.add("open_basket");
-    document.body.classList.add("no-scroll");
+//addToBasket(indexMealComponent) {}
 
-    //open dialogue classlist add 
+
+
+
+
+
+
+
     //style: btn clicked verändert sich zu added 1
 
 
-}
+
 
        

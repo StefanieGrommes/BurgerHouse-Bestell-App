@@ -12,7 +12,7 @@
 </head>
 <body onload="init()">
     <header>
-        <div class="header_elements"><img src="./assets/logos/bestellapp_favicon2.svg" alt="bestell_app favicon" class="header_images"></div>
+        <div class="header_elements"><img src="./assets/logos/bestellapp_logo_weiss.svg" alt="bestell_app_logo" class="header_images"></div>
         <div class="header_elements"><img src="./assets/logos/burger_menu.png" alt="menu_img" class="header_images"></div>
     </header>
   
@@ -37,16 +37,42 @@
                 <a href="http://"><h2>Salate</h2></a>
             </div>
        </section>
-       <section class="categorys_and_meals">
-            <div id="category_container">
-            </div>
-            <dialog class="open_basket closed_basket" id="my_basket">
-                    <header>WARENKORB</header>
-                    <main>INHALT</main>
-                    <button class="order_now">jetzt bestellen</button>
-                </dialog>
-            
-        </section>
+
+       <div class="meals_and_basket_wrapper">
+            <section class="categorys_and_meals">
+                <div id="category_container">
+                </div>      
+            </section>
+            <section class="basket_wrapper">
+                <div id="my_basket">
+                    <div class="headline_basket font_basket">Your Basket </div>
+                    <div class="menu_card basket_content">
+                        <div class="amount_plus_full_basket_dish_name"><p>AMOUNT</p><p>X</p><p class="full_basket_dish_name">DISH NAME</p>
+                        </div>
+                        <div class="second_line_menu_card_basket">
+                            <div class="delete_plus_quantity">
+                                <div class="delete_btn" onclick="delete_item()">
+                                    <img src="./assets/buttons/btn_delete_element.svg" alt="trash_icon">  
+                                </div>
+                                <div><p>AMOUNT</p></div>
+                                <div onclick="increase_amount()"><p>+</p></div>
+                            </div>
+                            <div class="dish_price"><p>DISH PRICE</p>
+                            </div>
+                        </div>           
+                    </div>
+                    <div class="costs_and_order_btn">
+                        <div class="calculate_costs">
+                            <div class="subtotal"><p>Subtotal</p><p>PRICE € </p></div>
+                            <div class="delivery"><p>Delivery fee</p><p class="delivery_cost">4,99€</p></div>
+                            <p class="white_line"></p>
+                            <div class="total_amount"><p>Total</p><p>SUMME</p></div>
+                        </div>
+                        <button class="font_basket" id="buy_now_btn" onclick="buyNow()">Buy now (SUMMME€)</button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
         <div class="copyright_elements">
