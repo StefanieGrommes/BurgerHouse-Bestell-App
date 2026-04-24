@@ -6,8 +6,10 @@
     <title>Burger House</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./assets/logos/bestellapp_favicon2.svg" type="image/x-icon">
-    <script src="./scripts /array.js"></script>
+    <script src="./scripts/array.js"></script>
     <script src="./script.js"></script>
+    <script src="./scripts/templates_onload.js"></script>
+    
     
 </head>
 <body onload="init()">
@@ -46,29 +48,9 @@
             <section class="basket_wrapper">
                 <div id="my_basket">
                     <div class="headline_basket font_basket">Your Basket </div>
-                    <div class="menu_card basket_content">
-                        <div class="amount_plus_full_basket_dish_name"><p>AMOUNT</p><p>X</p><p class="full_basket_dish_name">DISH NAME</p>
-                        </div>
-                        <div class="second_line_menu_card_basket">
-                            <div class="delete_plus_quantity">
-                                <div class="delete_btn" onclick="delete_item()">
-                                    <img src="./assets/buttons/btn_delete_element.svg" alt="trash_icon">  
-                                </div>
-                                <div><p>AMOUNT</p></div>
-                                <div onclick="increase_amount()"><p>+</p></div>
-                            </div>
-                            <div class="dish_price"><p>DISH PRICE</p>
-                            </div>
-                        </div>           
-                    </div>
-                    <div class="costs_and_order_btn">
-                        <div class="calculate_costs">
-                            <div class="subtotal"><p>Subtotal</p><p>PRICE € </p></div>
-                            <div class="delivery"><p>Delivery fee</p><p class="delivery_cost">4,99€</p></div>
-                            <p class="white_line"></p>
-                            <div class="total_amount"><p>Total</p><p>SUMME</p></div>
-                        </div>
-                        <button class="font_basket" id="buy_now_btn" onclick="buyNow()">Buy now (SUMMME€)</button>
+                    <div id="basket_content" class="basket_content">
+                        <span class="empty_basket_text">Nothing here yet.<br> Go ahead and choose something <br> delicious!</span>
+                        <img src="./assets/buttons/btn_basket_default.svg" alt="basket_img" class="basket_img">
                     </div>
                 </div>
             </section>
@@ -86,4 +68,5 @@
     </footer>
     
 </body>
+<script src="./scripts/templates_onclick.js"></script>
 </html>

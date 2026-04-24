@@ -1,0 +1,30 @@
+function showFilledBasket(basketDish,dishSumInEuro,indexBasket){
+    return `<div class="menu_card" id="basket_content_filled">
+                <div class="amount_plus_full_basket_dish_name"><div id="amount">${basketDish.amount}</div><p>x</p><p class="full_basket_dish_name">${basketDish.dish}</p>
+                </div>
+                <div class="second_line_menu_card_basket">
+                    <div class="delete_plus_quantity">
+                        <div id="delete_btn" onclick="delete_item(${indexBasket})">
+                            <img src="./assets/buttons/btn_delete_element.svg" alt="delete_btn">
+                        </div>
+                        <div><p>${basketDish.amount}</p></div>
+                        <div onclick="increase_amount()"><p>+</p></div>
+                    </div>
+                    <div id="dish_price"><p>${dishSumInEuro}</p>
+                    </div>
+                </div>           
+            </div>`
+                    
+}
+
+function showCosts(subtotalInEur,finalSumInEur,deliveryFeeInEur){
+    return `<div class="costs_and_order_btn">
+                        <div class="calculate_costs">
+                            <div class="subtotal"><p>Subtotal</p><p>${subtotalInEur}</p></div>
+                            <div class="delivery"><p>Delivery fee</p><p id="delivery_fee">${deliveryFeeInEur}</p></div>
+                            <p class="white_line"></p>
+                            <div class="total_amount"><p>Total</p><p>${finalSumInEur}</p></div>
+                        </div>
+                        <button class="font_basket" id="buy_now_btn" onclick="buyNow()">Buy now (${finalSumInEur})</button>
+                    </div>`
+}
