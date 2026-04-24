@@ -45,10 +45,13 @@ function renderMealComponents(indexCategory){
 function addToBasket(indexMealComponent,indexCategory){
     let meal = categoryDetails[indexCategory].meals[indexMealComponent];
     meal.amount++;
+    changeOrderBtn(indexCategory,indexMealComponent);
+
         if (!basket.includes(meal)) {
             basket.push(meal);  
         }
         renderBasket();
+       
 }
 
 
@@ -95,7 +98,6 @@ function renderCost(){
 }
 
 function delete_item(indexBasket){
-    console.log("index beim click", indexBasket);
     let basketDish = basket[indexBasket];
 
     basketDish.amount--;
@@ -121,7 +123,26 @@ function renderBasket(){
     }     
 
     basketContent.innerHTML += renderCost();
+}
 
+function changeOrderBtn(indexCategory,indexMealComponent){
+    let orderBtn = document.getElementById(`order_btn_${indexMealComponent}`);
+    let newAmount = categoryDetails[indexCategory].meals[indexMealComponent].amount
+    orderBtn.innerHTML = "added" +" "+ newAmount;
+    orderBtn.classList.add("order_btn_clicked"); //ist noch falscher Bezugspuntk, muss auf basketdish umgesetzt werden, sonst aktualisiert er nicht
+
+}
+
+function increase_amount(indexBasket){
+    let basketDish = basket[indexBasket];
+    basketDish.amount++;
+
+    if (basketDish.amount > 24) {
+        alert('bitte maximale Anzahl beachten');
+        return 24
+    }
+
+    renderBasket();
 }
    
 

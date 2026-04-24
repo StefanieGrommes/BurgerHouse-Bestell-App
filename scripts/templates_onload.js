@@ -1,4 +1,4 @@
-function showMealComponents(indexMealComponent,indexCategory, priceInEuro){
+function showMealComponents(indexMealComponent,indexCategory,priceInEuro){
     let meal = categoryDetails[indexCategory].meals[indexMealComponent];
    return `<div class="menu_card">
                 <div class="meal_component">
@@ -12,7 +12,7 @@ function showMealComponents(indexMealComponent,indexCategory, priceInEuro){
                         </div>
                         <div class="price_and_order_btn">
                             <div id="meal_price"><h3>${priceInEuro}</h3></div>
-                            <button type="submit" onclick="addToBasket(${indexMealComponent},${indexCategory})" class="order_btn">Add to basket</button>
+                            <button type="submit" onclick="addToBasket(${indexMealComponent},${indexCategory})" class="order_btn" id="order_btn_${indexMealComponent}">Add to basket</button>
                         </div>
                     </div>       
                 </div>

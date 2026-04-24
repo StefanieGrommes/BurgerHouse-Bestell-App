@@ -1,5 +1,5 @@
 function showFilledBasket(basketDish,dishSumInEuro,indexBasket){
-    return `<div class="menu_card" id="basket_content_filled">
+    return `<div class="menu_card">
                 <div class="amount_plus_full_basket_dish_name"><div id="amount">${basketDish.amount}</div><p>x</p><p class="full_basket_dish_name">${basketDish.dish}</p>
                 </div>
                 <div class="second_line_menu_card_basket">
@@ -8,12 +8,12 @@ function showFilledBasket(basketDish,dishSumInEuro,indexBasket){
                             <img src="./assets/buttons/btn_delete_element.svg" alt="delete_btn">
                         </div>
                         <div><p>${basketDish.amount}</p></div>
-                        <div onclick="increase_amount()"><p>+</p></div>
+                        <button onclick="increase_amount(${indexBasket})" id="increase_btn">+</button>
                     </div>
                     <div id="dish_price"><p>${dishSumInEuro}</p>
                     </div>
                 </div>           
-            </div>`
+                </div>`
                     
 }
 
