@@ -1,6 +1,6 @@
 function showMealComponents(indexMealComponent,indexCategory,priceInEuro){
     let meal = categoryDetails[indexCategory].meals[indexMealComponent];
-   return `<div class="menu_card">
+   return `<div class="menu_card menu_width_dish">
                 <div class="meal_component">
                     <div class="meal_img_container">
                         <img src="${meal.source}" alt="${meal.dish}" id="meal_img">

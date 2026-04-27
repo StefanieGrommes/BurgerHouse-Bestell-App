@@ -16,14 +16,16 @@ function renderCategory() {
 
 function showCategory(indexCategory,categoryContent){
     categoryContent.innerHTML +=
-    `<div class="category_orange_bg">
-            <div class="main_dishes_category_container "
-                    <div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img"></div>
-                    <div id="main_dishes_category"><h2>${categoryDetails[indexCategory].title}</h2></div>  
-            </div>
+    `<div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img">
     </div>
-    <div class="main_dishes" id="main_dish_${indexCategory}"></div>
-    `         
+    <div class="category_orange_bg">
+        <div class="main_dishes_category_container">
+            <div id="main_dishes_category"><h2>${categoryDetails[indexCategory].title}</h2>
+            </div>  
+        </div>
+    </div>
+    <div class="main_dishes" id="main_dish_${indexCategory}">
+    </div>`         
 
     renderMealComponents(indexCategory);
 }
@@ -121,8 +123,8 @@ function renderBasket(){
             let dishSumInEuro = setCurrency(totalDishPrice);
             basketContent.innerHTML += showFilledBasket(basketDish,dishSumInEuro,indexBasket);  
     }     
-
-    basketContent.innerHTML += renderCost();
+    let basketCosts = document.getElementById("basket_costs");
+    basketCosts.innerHTML = renderCost();
 }
 
 function changeOrderBtn(indexCategory,indexMealComponent){
