@@ -2,7 +2,9 @@ function init(){
     renderCategory();
 }
 
+
 let basket = [];
+
 
 function renderCategory() {
     let categoryContent = document.getElementById("category_container");
@@ -10,26 +12,12 @@ function renderCategory() {
 
     for (let indexCategory = 0; indexCategory < categoryDetails.length; indexCategory++) {
         const category = categoryDetails[indexCategory];
-        showCategory(indexCategory,categoryContent);
+        
+        categoryContent.innerHTML += showCategory(indexCategory,categoryContent);
+       renderMealComponents(indexCategory);
         };
-
-
-function showCategory(indexCategory,categoryContent){
-    categoryContent.innerHTML +=
-    `<div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img">
-    </div>
-    <div class="category_orange_bg">
-        <div class="main_dishes_category_container">
-            <div id="main_dishes_category"><h2>${categoryDetails[indexCategory].title}</h2>
-            </div>  
-        </div>
-    </div>
-    <div class="main_dishes" id="main_dish_${indexCategory}">
-    </div>`         
-
-    renderMealComponents(indexCategory);
 }
-}
+
 
 function renderMealComponents(indexCategory){
     let mainDish = document.getElementById(`main_dish_${indexCategory}`);
@@ -40,33 +28,38 @@ function renderMealComponents(indexCategory){
         let price = meal.price;
         let priceInEuro = setCurrency(price);
         mainDish.innerHTML += showMealComponents(indexMealComponent,indexCategory,priceInEuro);
-        }
-    
+        }    
 }
+
 
 function addToBasket(indexMealComponent,indexCategory){
     let meal = categoryDetails[indexCategory].meals[indexMealComponent];
     meal.amount++;
-    changeOrderBtn(indexCategory,indexMealComponent);
 
         if (!basket.includes(meal)) {
             basket.push(meal);  
         }
-        renderBasket();
-       
+
+        if(meal.amount > 24) {
+            alert('bitte maximale Anzahl beachten');
+        return 24;
+        }
+
+        renderBasket();     
 }
 
 
 function calculateTotalDishPrice(basketdish){
  totalDishPrice = (basketdish.price) * basketdish.amount;
  return totalDishPrice;
-
 }
+
 
 function setCurrency(value){ 
  value = value.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
 return value
 }
+
 
 function calculateSubtotal(){
     let subtotal = 0;
@@ -78,6 +71,7 @@ function calculateSubtotal(){
         return subtotal;
 }
 
+
 function getDeliveryFee(subtotal){
     let deliveryFee = 0;
     if (subtotal < 50 && subtotal!=0 ){
@@ -86,6 +80,7 @@ function getDeliveryFee(subtotal){
 
     return deliveryFee;
 }
+
 
 function renderCost(){
     let subtotal = calculateSubtotal();
@@ -99,10 +94,12 @@ function renderCost(){
     return showCosts(subtotalInEur,finalSumInEur,deliveryFeeInEur);
 }
 
-function delete_item(indexBasket){
+
+function delete_item(indexBasket,indexMealComponent){
     let basketDish = basket[indexBasket];
 
     basketDish.amount--;
+    changeOrderBtn(basketDish);
 
     if (basketDish.amount < 1) {
         basket.splice(indexBasket, 1);
@@ -110,6 +107,7 @@ function delete_item(indexBasket){
 
     renderBasket();
 }
+
     
 function renderBasket(){
     
@@ -121,40 +119,62 @@ function renderBasket(){
 
             let totalDishPrice = calculateTotalDishPrice(basketDish);
             let dishSumInEuro = setCurrency(totalDishPrice);
-            basketContent.innerHTML += showFilledBasket(basketDish,dishSumInEuro,indexBasket);  
+            basketContent.innerHTML += showFilledBasket(basketDish,dishSumInEuro,indexBasket)
+            changeOrderBtn(basketDish);  
     }     
     let basketCosts = document.getElementById("basket_costs");
     basketCosts.innerHTML = renderCost();
 }
 
-function changeOrderBtn(indexCategory,indexMealComponent){
-    let orderBtn = document.getElementById(`order_btn_${indexMealComponent}`);
-    let newAmount = categoryDetails[indexCategory].meals[indexMealComponent].amount
-    orderBtn.innerHTML = "added" +" "+ newAmount;
-    orderBtn.classList.add("order_btn_clicked"); //ist noch falscher Bezugspuntk, muss auf basketdish umgesetzt werden, sonst aktualisiert er nicht
 
-}
+function changeOrderBtn(meal){
+    
+    let orderBtn = document.getElementById(`order_btn_${meal.id}`);
+    if(!orderBtn) return;
 
-function increase_amount(indexBasket){
+    if (meal.amount > 0){
+    orderBtn.classList.add("order_btn_clicked");
+    orderBtn.innerHTML = `added ${meal.amount}`;
+    } else {
+        orderBtn.classList.remove("order_btn_clicked");
+        orderBtn.innerHTML = "Add to basket";
+        }
+    }
+    
+
+function increase_amount(indexBasket,indexMealComponent){
     let basketDish = basket[indexBasket];
     basketDish.amount++;
+
+    changeOrderBtn(basketDish);
 
     if (basketDish.amount > 24) {
         alert('bitte maximale Anzahl beachten');
         return 24
     }
-
     renderBasket();
 }
    
+function buyNow(){
+   basket = [];
+   
+   window.open("./sendorder.html");
+    let basketCosts = document.getElementById("basket_costs");
+    basketCosts.innerHTML = " ";
+   let basketContent = document.getElementById("basket_content");
+    basketContent.innerHTML = `<div id="basket_content" class="basket_content">
+                                    <span class="empty_basket_text">Nothing here yet.<br> Go ahead and choose something <br> delicious!</span>
+                                    <img src="./assets/buttons/btn_basket_default.svg" alt="basket_img" class="basket_img">
+                                </div>`
 
+    let orderBtn = document.getElementById(`order_btn_${query.Selector}`);
+    if(!orderBtn) return;
+    orderBtn.classList.remove("order_btn_clicked");
+        orderBtn.innerHTML = "Add to basket";
 
+     
+}
 
-
-
-
-
-    //style: btn clicked verändert sich zu added 1
 
 
 

@@ -1,3 +1,18 @@
+function showCategory(indexCategory,categoryContent){
+    return `<div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img">
+            </div>
+            <div class="category_orange_bg">
+                <div class="main_dishes_category_container">
+                    <div id="main_dishes_category"><h2>${categoryDetails[indexCategory].title}</h2>
+                    </div>  
+                </div>
+            </div>
+            <div class="main_dishes" id="main_dish_${indexCategory}">
+            </div>`            
+}
+
+
+
 function showMealComponents(indexMealComponent,indexCategory,priceInEuro){
     let meal = categoryDetails[indexCategory].meals[indexMealComponent];
    return `<div class="menu_card menu_width_dish">
@@ -12,7 +27,7 @@ function showMealComponents(indexMealComponent,indexCategory,priceInEuro){
                         </div>
                         <div class="price_and_order_btn">
                             <div id="meal_price"><h3>${priceInEuro}</h3></div>
-                            <button type="submit" onclick="addToBasket(${indexMealComponent},${indexCategory})" class="order_btn" id="order_btn_${indexMealComponent}">Add to basket</button>
+                            <button type="submit" onclick="addToBasket(${indexMealComponent},${indexCategory})" class="order_btn" id="order_btn_${meal.id}">Add to basket</button>
                         </div>
                     </div>       
                 </div>
