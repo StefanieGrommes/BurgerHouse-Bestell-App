@@ -156,21 +156,12 @@ function increase_amount(indexBasket,indexMealComponent){
 }
    
 function buyNow(){
-   basket = [];
-   
-   window.open("./sendorder.html");
-    let basketCosts = document.getElementById("basket_costs");
-    basketCosts.innerHTML = " ";
-   let basketContent = document.getElementById("basket_content");
-    basketContent.innerHTML = `<div id="basket_content" class="basket_content">
-                                    <span class="empty_basket_text">Nothing here yet.<br> Go ahead and choose something <br> delicious!</span>
-                                    <img src="./assets/buttons/btn_basket_default.svg" alt="basket_img" class="basket_img">
-                                </div>`
+   let myBasket = document.getElementById("my_basket")
+   let orderConfirmedDialog = document.getElementById("order_confirmed_dialog");
+   myBasket.classList.add("no_basket_shown");
+    orderConfirmedDialog.showModal();
 
-    let orderBtn = document.getElementById(`order_btn_${query.Selector}`);
-    if(!orderBtn) return;
-    orderBtn.classList.remove("order_btn_clicked");
-        orderBtn.innerHTML = "Add to basket";
+
 
      
 }
