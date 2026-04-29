@@ -642,3 +642,12 @@ footer {
 .copyright_img {
     object-fit: contain;
 }
+
+/* ------->MEDIA QUERIES------------------------------*/
+
+@media  (max-width:768px){
+    
+}
+    
+
+

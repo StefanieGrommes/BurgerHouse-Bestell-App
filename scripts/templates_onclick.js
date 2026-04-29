@@ -16,7 +16,7 @@ function showFilledBasket(basketDish,dishSumInEuro){
                             <img src="./assets/buttons/btn_delete_element.svg" alt="delete_btn">
                         </button>
                         <div><span class="basket_amount">${basketDish.amount}</span></div>
-                        <button onclick="increase_amount(${basketDish.id})" id="increase_btn" class="increase_btn">+</button>
+                        <button onclick="increaseAmount(${basketDish.id})" id="increase_btn" class="increase_btn">+</button>
                     </div>
                     <div id="dish_price"><p>${dishSumInEuro}</p>
                     </div>

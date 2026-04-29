@@ -179,7 +179,7 @@ function changeOrderBtn(meal){
     }
     
 
-function increase_amount(mealId){
+function increaseAmount(mealId){
      let index = -1;  //index ist nicht gefunden
 
     for (let i = 0; i < basket.length; i++) { //gehe den warenkrob durch, bis die basket.id gleich der meal.id ist

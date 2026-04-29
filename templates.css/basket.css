@@ -1,0 +1,175 @@
+/* ------->BASKET------------------------------*/
+
+.basket_wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-self: flex-start;
+    width: 400px;
+    height: 60dvh;
+    padding: 48px 32px 48px 32px;
+    background-color: var(--third-bg-color);
+    border-radius: 8px;
+    border-width: 0;
+    box-sizing: border-box;
+    overscroll-behavior: contain;
+    position: sticky;
+    top: 20px;  
+}
+
+.no_basket {
+    display: none;
+}
+
+#my_basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;  
+}
+
+.all_basket_meals {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.font_basket {
+    font-size: 32px;
+    font-family: 'Palanquin', sans-serif;
+    font-weight: 700;
+}
+
+.headline_basket {
+    color: var(--secondary-bg-color);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.empty_basket_text {
+    font-family: 'Palanquin', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--secondary-bg-color);
+}
+
+.basket_img {
+    height: 128px;
+    width: 128px;
+    margin-top: 50px;
+}
+
+.full_basket_dish_name {
+    color:var(--third-bg-color);
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.basket_content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex:1;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.basket_content_empty {
+    display: none;
+}
+
+.menu_width_basketdish{
+   min-width: 230px;
+
+}
+.first_line_menu_card_basket {
+    display: flex;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.second_line_menu_card_basket{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete_plus_quantity {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.delete_btn_basket {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    padding-top: 5px;
+    background-color: transparent;
+}
+
+.upper_delete_btn_hidden {
+    display: none;
+}
+
+.dish_name_plus_amount {
+    display: flex;
+    gap: 8px;
+}
+
+.basket_amount {
+    display: flex;
+    align-items: center;
+}
+
+.increase_btn {
+    border-width: 0;
+    border-radius: 8px;
+    font-size: 24px;
+    padding-top: 6px;
+    background-color: transparent;
+}
+
+.costs_and_order_btn {
+    max-width: 800px;
+    width: 100%;
+}
+
+.calculate_costs {
+    display:flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.subtotal, .delivery, .total_amount {
+    display:flex;
+    justify-content: space-between;
+}
+
+.white_line {
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+
+#buy_now_btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    color: white;
+    padding: 8px;
+    background-color: var(--primary-bg-color);
+    border-width: 0;
+    border-radius: 24px
+}
