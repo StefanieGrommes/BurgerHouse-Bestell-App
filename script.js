@@ -2,7 +2,6 @@ function init(){
     renderCategory();
 }
 
-
 let basket = [];
 
 
@@ -95,20 +94,56 @@ function renderCost(){
 }
 
 
-function delete_item(indexBasket,indexMealComponent){
-    let basketDish = basket[indexBasket];
+function decreaseItem(mealId){
+     let index = -1;  //index ist nicht gefunden
+
+    for (let i = 0; i < basket.length; i++) { //gehe den warenkrob durch, bis die basket.id gleich der meal.id ist
+    if (basket[i].id === mealId) {
+        index = i;
+        break;
+        }
+    }
+
+        if (index === -1) return;
+
+    let basketDish = basket[index];
 
     basketDish.amount--;
-    changeOrderBtn(basketDish);
 
     if (basketDish.amount < 1) {
-        basket.splice(indexBasket, 1);
+        basket.splice(index, 1);
     }
+    
+    changeOrderBtn(basketDish);
 
     renderBasket();
 }
 
+function deleteItem(mealId){
+    let index = -1;  //index ist nicht gefunden
+
+    for (let i = 0; i < basket.length; i++) { //gehe den warenkrob durch, bis die basket.id gleich der meal.id ist
+    if (basket[i].id === mealId) {
+        index = i;
+        break;
+        }
+    }
+
+        if (index === -1) return;
+
+    basketDish = basket[index];
     
+
+    basket.splice(index, 1); //lösche das Gericht mit dem index
+
+    
+    renderBasket();
+    basketDish.amount = 0;
+    changeOrderBtn(basketDish);
+}
+
+
+
 function renderBasket(){
     
     let basketContent = document.getElementById("basket_content");
@@ -120,7 +155,9 @@ function renderBasket(){
             let totalDishPrice = calculateTotalDishPrice(basketDish);
             let dishSumInEuro = setCurrency(totalDishPrice);
             basketContent.innerHTML += showFilledBasket(basketDish,dishSumInEuro,indexBasket)
-            changeOrderBtn(basketDish);  
+            changeOrderBtn(basketDish);
+
+             if (basketDish.amount > 1) {toggleDeleteBtn(basketDish)};
     }     
     let basketCosts = document.getElementById("basket_costs");
     basketCosts.innerHTML = renderCost();
@@ -142,22 +179,47 @@ function changeOrderBtn(meal){
     }
     
 
-function increase_amount(indexBasket,indexMealComponent){
-    let basketDish = basket[indexBasket];
-    basketDish.amount++;
+function increase_amount(mealId){
+     let index = -1;  //index ist nicht gefunden
 
+    for (let i = 0; i < basket.length; i++) { //gehe den warenkrob durch, bis die basket.id gleich der meal.id ist
+    if (basket[i].id === mealId) {
+        index = i;
+        break;
+        }
+    }
+
+        if (index === -1) return;
+
+    basketDish = basket[index];
+
+    basketDish.amount++;
+    
     changeOrderBtn(basketDish);
 
-    if (basketDish.amount > 24) {
-        alert('bitte maximale Anzahl beachten');
-        return 24
-    }
     renderBasket();
 }
    
 
+function toggleDeleteBtn(basketDish) {
+
+    const lowerDeleteBtn = document.getElementById(`lower_delete_btn_basket_${basketDish.id}`);
+     if(!lowerDeleteBtn) return;
+
+    lowerDeleteBtn.innerHTML = "-";
+
+    const upperDeleteBtn = document.getElementById(`upper_delete_btn_basket_${basketDish.id}`);
+    if (!upperDeleteBtn) return;
+    upperDeleteBtn.classList.remove("upper_delete_btn_hidden");
+    upperDeleteBtn.classList.add("delete_btn_basket");
+
+}
 
 function buyNow(){
+    if (basket.length === 0) {
+        return;
+    }
+
    let myBasket = document.getElementById("my_basket")
    basket = [];
    renderBasket();
@@ -171,6 +233,7 @@ function buyNow(){
     const myTimeout = setTimeout(closeDialog, 4000);
 }
 
+
 function closeDialog(){
     let myBasket = document.getElementById("my_basket")
     myBasket.style.display = "flex";
@@ -180,9 +243,6 @@ function closeDialog(){
     orderConfirmedDialog.classList.remove("opened");
      document.body.classList.remove("no-scroll"); 
      init();
-   
-
-   
 }
 
 

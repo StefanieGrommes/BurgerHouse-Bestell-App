@@ -203,7 +203,7 @@ a:hover {
 
 .category_orange_bg {
     display: flex;
-    width: 100vw;
+    width: 110vw;
     margin-left: calc(50% - 50vw);
     margin-bottom: 12px;
     background-color: var(--primary-bg-color);
@@ -436,9 +436,9 @@ a:hover {
    min-width: 230px;
 
 }
-.amount_plus_full_basket_dish_name {
+.first_line_menu_card_basket {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     line-height: 1.5;
 }
 
@@ -463,6 +463,15 @@ a:hover {
     cursor: pointer;
     padding-top: 5px;
     background-color: transparent;
+}
+
+.upper_delete_btn_hidden {
+    display: none;
+}
+
+.dish_name_plus_amount {
+    display: flex;
+    gap: 8px;
 }
 
 .basket_amount {
