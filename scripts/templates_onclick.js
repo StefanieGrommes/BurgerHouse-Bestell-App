@@ -25,6 +25,6 @@ function showCosts(subtotalInEur,finalSumInEur,deliveryFeeInEur){
                             <p class="white_line"></p>
                             <div class="total_amount"><p>Total</p><p>${finalSumInEur}</p></div>
                         </div>
-                        <button class="font_basket" id="buy_now_btn" onclick="buyNow()">Buy now (${finalSumInEur})</button>
+                        <button class="font_basket" id="buy_now_btn" onclick="buyNow()">Buy now(${finalSumInEur})</button>
                     </div>`
 }

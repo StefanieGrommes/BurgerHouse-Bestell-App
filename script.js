@@ -155,17 +155,35 @@ function increase_amount(indexBasket,indexMealComponent){
     renderBasket();
 }
    
+
+
 function buyNow(){
    let myBasket = document.getElementById("my_basket")
+   basket = [];
+   renderBasket();
+   
+   myBasket.style.display = "none";
+
    let orderConfirmedDialog = document.getElementById("order_confirmed_dialog");
-   myBasket.classList.add("no_basket_shown");
     orderConfirmedDialog.showModal();
-
-
-
-     
+    orderConfirmedDialog.classList.add("opened");
+    document.body.classList.add("no-scroll");
+    const myTimeout = setTimeout(closeDialog, 4000);
 }
 
+function closeDialog(){
+    let myBasket = document.getElementById("my_basket")
+    myBasket.style.display = "flex";
+
+    let orderConfirmedDialog = document.getElementById("order_confirmed_dialog");
+    orderConfirmedDialog.close();
+    orderConfirmedDialog.classList.remove("opened");
+     document.body.classList.remove("no-scroll"); 
+     init();
+   
+
+   
+}
 
 
 
