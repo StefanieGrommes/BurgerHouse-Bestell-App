@@ -246,6 +246,10 @@ function closeDialog(){
 }
 
 
+function showMobileBasket(){
+    //dialog genieren mit mobile_basket
+
+}
 
 
        

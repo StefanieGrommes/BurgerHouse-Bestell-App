@@ -3,9 +3,9 @@
 .basket_wrapper {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     align-self: flex-start;
-    width: 400px;
+    flex-basis: 400px;
+    flex-shrink: 0;
     height: 60dvh;
     padding: 48px 32px 48px 32px;
     background-color: var(--third-bg-color);
@@ -17,6 +17,10 @@
     top: 20px;  
 }
 
+#basket_costs {
+    width: 100%;
+}
+
 .no_basket {
     display: none;
 }
@@ -26,6 +30,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    flex-basis: 400px;
+    flex-shrink: 0;
     width: 100%;  
 }
 
