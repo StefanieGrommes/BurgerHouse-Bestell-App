@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burger House</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./templates.css/basket.css">
+    <link rel="stylesheet" href="./templates.css/basket.css"> 
+    <link rel="stylesheet" href="./templates.css/fonts.css">
     <link rel="shortcut icon" href="./assets/logos/bestellapp_favicon2.svg" type="image/x-icon">
     <script src="./scripts/array.js"></script>
     <script src="./script.js"></script>
@@ -15,8 +16,10 @@
 </head>
 <body onload="init()">
     <header>
-        <div class="header_elements"><img src="./assets/logos/bestellapp_logo_weiss.svg" alt="bestell_app_logo" class="header_images"></div>
-        <div class="header_elements"><img src="./assets/logos/burger_menu.png" alt="menu_img" class="header_images"></div>
+        <div class="header_elements">
+            <img src="./assets/logos/bestellapp_logo_weiss.svg" alt="bestell_app_logo" class="header_images">
+            <img src="./assets/logos/burger_menu.png" alt="menu_img" class="header_images">
+        </div>
     </header>
   
     <main>
@@ -37,9 +40,9 @@
             <div class="full_width_content">
                 <div class="dishes_navigation">
                     <h2>&#10149</h2>
-                    <a href="http://"><h2>Burger & Sandwiches </h2></a>
-                    <a href="http://"><h2>Pizza (30cm)</h2></a>
-                    <a href="http://"><h2>Salate</h2></a>
+                    <a href="#category_img_burger"><h2>Burger & Sandwiches </h2></a>
+                    <a href="#category_img_pizzas"><h2>Pizza (30cm)</h2></a>
+                    <a href="#category_img_salads"><h2>Salate</h2></a>
                 </div>
             </div>
        </section>
@@ -88,6 +91,13 @@
         <a href="http://" class="footer_link">Cookie Preferences</a>
         </div>
     </footer>
+    
+    <div class="nav_bar_mobile">
+        <button class="nav_bar_mobile_btn"><img src="./assets/buttons/btn_home_default.svg" alt="home"></button>
+        <button class="nav_bar_mobile_btn"><img src="./assets/buttons/btn_profile_default.svg" alt="profile"></button>
+        <button class="nav_bar_mobile_btn"><img src="./assets/logos/takeout_dining_2.svg" alt="favicon_bestellapp"></button>
+        <button class="nav_bar_mobile_btn"><img src="./assets/buttons/basket_deafult.svg" alt="basket"></button>
+    </div>
     
 </body>
 <script src="./scripts/templates_onclick.js"></script>

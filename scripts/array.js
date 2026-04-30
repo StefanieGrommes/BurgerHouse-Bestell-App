@@ -105,13 +105,16 @@ let salad = [
 let categoryDetails = [
     {"title": "Burger and Sandwiches",
     "source": "./assets/logos/icon_burger_sandwiches_category.svg",
-    "meals": burgerAndSandwiches},
+    "meals": burgerAndSandwiches,
+    "id": "burger"},
     {"title": "Pizza (30cm)",
     "source": "./assets/logos/icon_pizza_category.svg",
-    "meals": pizza},
+    "meals": pizza,
+    "id": "pizzas"},
     {"title": "Salads",
     "source": "./assets/logos/icon_salad_category.svg",
-    "meals": salad}
+    "meals": salad,
+    "id": "salads"}
 ]
 
 

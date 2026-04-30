@@ -89,6 +89,8 @@
 }
 .first_line_menu_card_basket {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 12px;
     line-height: 1.5;
 }

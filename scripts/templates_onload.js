@@ -1,5 +1,5 @@
 function showCategory(indexCategory,categoryContent){
-    return `<div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img">
+    return `<div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img_${categoryDetails[indexCategory].id}">
             </div>
             <div class="category_orange_bg">
                 <div class="main_dishes_category_container">
