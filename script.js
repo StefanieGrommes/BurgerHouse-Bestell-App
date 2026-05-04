@@ -147,20 +147,53 @@ function deleteItem(mealId){
 function renderBasket(){
     
     let basketContent = document.getElementById("basket_content");
+    let mobileBasketContent = document.getElementById("mobile_basket_content");
+
+    let basketCosts = document.getElementById("basket_costs");
+    let mobileBasketCosts = document.getElementById("mobile_basket_costs");
+
     basketContent.innerHTML = "";
+    mobileBasketContent.innerHTML = "";
+
+     if (basket.length === 0) {
+        let emptyHTML = `
+            <span class="empty_basket_text">Nothing here yet.<br> Go ahead and choose something <br> delicious!</span>
+                            <img src="./assets/buttons/btn_basket_default.svg" alt="basket_img" class="basket_img">
+        `;
+
+        basketContent.innerHTML = emptyHTML;
+        mobileBasketContent.innerHTML = emptyHTML;
+
+        basketCosts.innerHTML = "";
+        mobileBasketCosts.innerHTML = "";
+
+        return; 
+    }
 
     for (let indexBasket = 0; indexBasket < basket.length; indexBasket++) {
             let basketDish = basket[indexBasket]; 
 
             let totalDishPrice = calculateTotalDishPrice(basketDish);
             let dishSumInEuro = setCurrency(totalDishPrice);
-            basketContent.innerHTML += showFilledBasket(basketDish,dishSumInEuro,indexBasket)
-            changeOrderBtn(basketDish);
 
-             if (basketDish.amount > 1) {toggleDeleteBtn(basketDish)};
+            
+        let html = showFilledBasket(basketDish, dishSumInEuro);
+
+        // Desktop + Mobile befüllen
+        basketContent.innerHTML += html;
+        mobileBasketContent.innerHTML += html;
+
+        changeOrderBtn(basketDish);
+
+        if (basketDish.amount > 1) {
+            toggleDeleteBtn(basketDish);
+        }
     }     
-    let basketCosts = document.getElementById("basket_costs");
-    basketCosts.innerHTML = renderCost();
+
+    let costsHTML = renderCost();
+
+    basketCosts.innerHTML = costsHTML;
+    mobileBasketCosts.innerHTML = costsHTML;
 }
 
 
@@ -247,9 +280,14 @@ function closeDialog(){
 
 
 function showMobileBasket(){
-    //dialog genieren mit mobile_basket
-
+    let mobileBasketDialog = document.getElementById("mobile_basket_container");
+    mobileBasketDialog.showModal();
+    document.body.classList.add("no-scroll");
+    renderBasket();
 }
 
-
-       
+function closeMobileBasket(){
+    let mobileBasketDialog = document.getElementById("mobile_basket_container");
+    mobileBasketDialog.close();
+    document.body.classList.remove("no-scroll");
+}

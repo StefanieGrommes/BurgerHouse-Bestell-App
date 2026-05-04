@@ -37,36 +37,32 @@
             </div>     
        </section>
        <section class="dishes_navigation_container">
-            <div class="full_width_content">
                 <div class="dishes_navigation">
                     <h2>&#10149</h2>
                     <a href="#category_img_burger"><h2>Burger & Sandwiches </h2></a>
                     <a href="#category_img_pizzas"><h2>Pizza (30cm)</h2></a>
                     <a href="#category_img_salads"><h2>Salate</h2></a>
                 </div>
-            </div>
        </section>
-
-       <div class="full_width_content">
             <div class="meals_and_basket_wrapper">
 
-                    <section id="category_container">
+                <section id="category_container">
 
-                    </section>
-                    
-                    <section class="basket_wrapper" id="my_basket">
-                        <div class="headline_basket font_basket">Your Basket </div>
-                        <div class="all_basket_meals">
-                            <div id="basket_content" class="basket_content">
-                                <span class="empty_basket_text">Nothing here yet.<br> Go ahead and choose something <br> delicious!</span>
-                                <img src="./assets/buttons/btn_basket_default.svg" alt="basket_img" class="basket_img">
-                            </div>
+                </section>
+                
+                <section class="basket_wrapper" id="my_basket">
+                    <div class="headline_basket font_basket">Your Basket </div>
+                    <div class="all_basket_meals">
+                        <div id="basket_content" class="basket_content">
+                            <span class="empty_basket_text">Nothing here yet.<br> Go ahead and choose something <br> delicious!</span>
+                            <img src="./assets/buttons/btn_basket_default.svg" alt="basket_img" class="basket_img">
                         </div>
-                        <div id="basket_costs">
-                        </div>
-                    </section>
+                    </div>
+                    <div id="basket_costs">
+                    </div>
+                </section>
             </div>
-        </div>
+
 
      <dialog class="order_confirmed_dialog" id="order_confirmed_dialog">
                         <button onclick="closeDialog()" class="close_dialog_btn">X</button>
@@ -78,7 +74,22 @@
                         </div>
     </dialog>   
 
+    <dialog class="mobile_basket_container" id="mobile_basket_container">
+        <div class="basket_wrapper mobile_fullscreen">
+        <div class="headline_basket font_basket">
+            Your Basket
+            <button onclick="closeMobileBasket()" class="close_mobile_basket_btn">X</button>
+        </div>
+        <div class="all_basket_meals">
+            <div id="mobile_basket_content" class="basket_content"></div>
+        </div>
+        <div id="mobile_basket_costs"></div>
+    </div>
+
+    </dialog>
+
     </main>
+
     <footer>
         <div class="footer_elements">
         <div class="copyright_elements">
@@ -95,8 +106,8 @@
     <div class="nav_bar_mobile">
         <button class="nav_bar_mobile_btn"><img src="./assets/buttons/btn_home_default.svg" alt="home"></button>
         <button class="nav_bar_mobile_btn"><img src="./assets/buttons/btn_profile_default.svg" alt="profile"></button>
-        <button onclick="showMobileBasket()" class="nav_bar_mobile_btn" id="mobile_basket_btn"><img src="./assets/logos/takeout_dining_2.svg" alt="favicon_bestellapp"></button>
-        <button class="nav_bar_mobile_btn"><img src="./assets/buttons/basket_deafult.svg" alt="basket"></button>
+        <button class="nav_bar_mobile_btn"><img src="./assets/logos/takeout_dining_2.svg" alt="favicon_bestellapp"></button>
+        <button class="nav_bar_mobile_btn" onclick="showMobileBasket()"><img src="./assets/buttons/basket_deafult.svg" alt="basket"></button>
     </div>
     
 </body>
