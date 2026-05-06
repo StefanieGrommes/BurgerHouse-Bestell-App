@@ -6,7 +6,7 @@
     align-self: flex-start;
     flex-basis: 400px;
     flex-shrink: 0;
-    height: 60dvh;
+    height: 80dvh;
     padding: 48px 32px 48px 32px;
     background-color: var(--third-bg-color);
     border-radius: 8px;
@@ -15,6 +15,7 @@
     overscroll-behavior: contain;
     position: sticky;
     top: 20px;  
+    right: 0;
 }
 
 #basket_costs {
@@ -26,13 +27,16 @@
 }
 
 #my_basket {
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     flex-basis: 400px;
     flex-shrink: 0;
     width: 100%;  
+}
+
+.desktop_basket{
+    display: flex;
 }
 
 .all_basket_meals {
@@ -95,7 +99,7 @@
 }
 .first_line_menu_card_basket {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 12px;
     line-height: 1.5;
@@ -117,6 +121,8 @@
 .delete_btn_basket {
     display: flex;
     align-items: center;
+    width: 32px;
+    height: 32px;
     font-size: 24px;
     border: none;
     cursor: pointer;
@@ -125,7 +131,11 @@
 }
 
 .upper_delete_btn_hidden {
-    display: none;
+    visibility: hidden;
+}
+
+.upper_delete_btn_shown {
+    display: flex;
 }
 
 .dish_name_plus_amount {

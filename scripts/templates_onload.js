@@ -1,7 +1,7 @@
 function showCategory(indexCategory,categoryContent){
     return `<div class="category_orange_bg">
                 <div class="main_dishes_category_container">
-                    <div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img">
+                    <div class="category_img_container"><img src="${categoryDetails[indexCategory].source}" alt="${categoryDetails[indexCategory].title}" id="category_img_${categoryDetails[indexCategory].id}">
                     </div>
                     <div id="main_dishes_category"><h2>${categoryDetails[indexCategory].title}</h2>
                     </div>  
@@ -13,8 +13,7 @@ function showCategory(indexCategory,categoryContent){
 
 
 
-function showMealComponents(indexMealComponent,indexCategory,priceInEuro){
-    let meal = categoryDetails[indexCategory].meals[indexMealComponent];
+function showMealComponents(indexMealComponent,indexCategory,priceInEuro,meal){
    return `<div class="menu_card menu_width_dish">
                 <div class="meal_component">
                     <div class="meal_img_container">
@@ -33,4 +32,3 @@ function showMealComponents(indexMealComponent,indexCategory,priceInEuro){
                 </div>
             </div>`
 }
-

@@ -50,7 +50,7 @@
 
                 </section>
                 
-                <section class="basket_wrapper" id="my_basket">
+                <section class="basket_wrapper desktop_basket" id="my_basket">
                     <div class="headline_basket font_basket">Your Basket </div>
                     <div class="all_basket_meals">
                         <div id="basket_content" class="basket_content">
@@ -76,16 +76,19 @@
 
     <dialog class="mobile_basket_container" id="mobile_basket_container">
         <div class="basket_wrapper mobile_fullscreen">
-        <div class="headline_basket font_basket">
-            Your Basket
             <button onclick="closeMobileBasket()" class="close_mobile_basket_btn">X</button>
+            <div class="mobile_basket_content">
+                <div class="headline_basket font_basket">
+                    <div class="headline_basket_mobile">Your Basket</div>    
+                </div>
+                <div class="costs_and_meals_mobile_container">
+                    <div class="all_basket_meals">
+                        <div id="mobile_basket_content" class="basket_content"></div>
+                    </div>
+                    <div id="mobile_basket_costs"></div>
+                </div>
+            </div>
         </div>
-        <div class="all_basket_meals">
-            <div id="mobile_basket_content" class="basket_content"></div>
-        </div>
-        <div id="mobile_basket_costs"></div>
-    </div>
-
     </dialog>
 
     </main>

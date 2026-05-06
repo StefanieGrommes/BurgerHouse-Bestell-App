@@ -6,13 +6,15 @@ function showFilledBasket(basketDish,dishSumInEuro){
                         <p>x</p>
                         <p class="full_basket_dish_name">${basketDish.dish}</p>
                     </div>
-                    <button onclick="deleteItem(${basketDish.id})" class="upper_delete_btn_hidden" id="upper_delete_btn_basket_${basketDish.id}">
+                    <button onclick="deleteItem(${basketDish.id})" id="upper_delete_btn_basket_${basketDish.id}" class="upper_delete_btn upper_delete_btn_hidden" data-id="${basketDish.id}">
                     <img src="./assets/buttons/btn_delete_element.svg" alt="delete_btn">
                     </button>
                 </div>
                 <div class="second_line_menu_card_basket">
                     <div class="delete_plus_quantity">
-                        <button id="lower_delete_btn_basket_${basketDish.id}" onclick="decreaseItem(${basketDish.id})" class="delete_btn_basket">
+                        <button id="lower_delete_btn_basket_${basketDish.id}" onclick="decreaseItem(${basketDish.id})" class="delete_btn_basket lower_delete_btn"
+                        data-id="${basketDish.id}">
+
                             <img src="./assets/buttons/btn_delete_element.svg" alt="delete_btn">
                         </button>
                         <div><span class="basket_amount">${basketDish.amount}</span></div>
@@ -35,4 +37,9 @@ function showCosts(subtotalInEur,finalSumInEur,deliveryFeeInEur){
                         </div>
                         <button class="font_basket" id="buy_now_btn" onclick="buyNow()">Buy now(${finalSumInEur})</button>
                     </div>`
+}
+
+function emptyBasket(){
+    return `<span class="empty_basket_text">Nothing here yet.<br> Go ahead and choose something <br> delicious!</span>
+                            <img src="./assets/buttons/btn_basket_default.svg" alt="basket_img" class="basket_img">`;
 }

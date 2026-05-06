@@ -5,6 +5,12 @@
     /*lighter grey (Anzahl der bewertungen) #726D6D; */
 }   
 
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
 html {
     scroll-behavior: smooth;
     height: 100%;
@@ -206,6 +212,8 @@ a:hover {
     width: 100%;
     height: auto;
     gap: 36px;
+    padding-left: 48px;
+    margin: 0 auto;
 }
 
 #main_dishes_category {
@@ -225,7 +233,6 @@ a:hover {
     top: 20px;
     height: auto;
     width: 120px;
-    padding-left: 100px;
     margin-top: -60px;
 }
 
@@ -237,6 +244,7 @@ a:hover {
 
 .meals_and_basket_wrapper {
     display: flex;
+    justify-content: space-between;
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
@@ -337,8 +345,6 @@ a:hover {
     justify-content: space-between;
     min-height: 240px;
     min-width: 400px;
-    padding: 12px;
-    margin: 0 auto;
     box-sizing: border-box;
     background-color: var(--third-bg-color);
     border-width: 0;
@@ -461,22 +467,18 @@ footer {
     display:none;
 }
 
-/* ------->MEDIA QUERIES------------------------------*/
-
-/* hier nchmal orange bg mit footer und header abgliechen */
-@media (min-width:2000px){
-    .main_dishes_category_container {
-        position: relative;
-        left: 220px;
-        margin: 0 auto;
-        margin-left: 0;
-    }
-
-    .category_orange_bg {
-        width: 120vw;
-        
-    }
+.headline_basket_mobile {
+    text-align: center;
 }
+
+.costs_and_meals_mobile_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+/* ------->MEDIA QUERIES------------------------------*/
 
 @media (max-width:1920px){
     .header_elements {
@@ -527,6 +529,7 @@ footer {
         flex: 0 0 300px !important;
         max-width: 300px;
         min-width: 300px;
+        padding: 48px 16px 48px 16px;
     }
 
      .main_dishes_category_container {
@@ -554,7 +557,6 @@ footer {
     }
 
     .main_dishes_category_container {
-         
         margin-left: 0;  
     }
 
@@ -565,12 +567,13 @@ footer {
         padding: 0 0 0 24px;
     }
    
-    #my_basket {
-        display: none;
-    }
-
+   
     .mobile_basket_container[open]{
         display: flex;
+    }
+
+    .desktop_basket {
+        display: none !important;
     }
 
      .basket_wrapper {
@@ -591,7 +594,7 @@ footer {
         color: var(--third-bg-color);
 }
 
-.mobile_basket_container {
+    .mobile_basket_container {
         margin: 0;
         padding: 0;
         border: none;
@@ -605,18 +608,20 @@ footer {
         background: transparent;
 }
 
-.full_basket_dish_name {
+    .full_basket_dish_name {
     color: var(--third-bg-color);
 }
 
-.mobile_fullscreen .headline_basket {
+    .mobile_fullscreen .headline_basket {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
     
 
-.close_mobile_basket_btn {
+    .close_mobile_basket_btn {
+    display: flex;
+    justify-content: flex-end;
     border-width: 0;
     border-radius: 8px;
     font-size: 24px;
@@ -624,11 +629,46 @@ footer {
     background-color: transparent;
     }
     
-footer {
-    position: relative;
-    bottom: 60px;
-    right: 0;  
+.mobile_basket_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 680px;
+}  
+
+.basket_content, .full_basket_dish_name, .delete_btn_basket, .increase_btn {
+    font-size: 32px;
+}
+.basket_content {
+    padding: 0;
+}
+#mobile_basket_costs {
+    width: 100%;
+   
+}
+.calculate_costs {
+    font-size: 32px;
+}
+
+body {
+    padding-bottom: 60px;
     }
+}
+
+
+
+@media (max-width:380px){
+.basket_content, .full_basket_dish_name, .delete_btn_basket, .increase_btn {
+    font-size: 24px;
+}
+
+.font_basket {
+    width: 100%;
+    font-size: 24px;
+}
+.calculate_costs {
+    font-size: 24px;
+}
 }
     
 
