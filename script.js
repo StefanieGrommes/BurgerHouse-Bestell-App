@@ -41,13 +41,13 @@ function addToBasket(indexMealComponent,indexCategory){
 }
 
 function calculateTotalDishPrice(basketdish){
- totalDishPrice = (basketdish.price) * basketdish.amount;
- return totalDishPrice;
+    let totalDishPrice = (basketdish.price) * basketdish.amount;
+    return totalDishPrice;
 }
 
 function setCurrency(value){ 
-value = value.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
-return value
+    value = value.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' });
+    return value
 }
 
 function calculateSubtotal(){
