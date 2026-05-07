@@ -751,6 +751,11 @@ footer {
         font-size: 24px;
     }
 
+    .order_confirmed_dialog {
+        min-height: 180px;
+        min-width: 320px;
+    }
+
     footer {
         margin-top: 18px;
         height: 100px;
