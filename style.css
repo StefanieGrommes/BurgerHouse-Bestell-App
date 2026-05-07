@@ -122,6 +122,7 @@ main {
     display: flex;
     flex-direction:column;
     position: relative;
+    width: 100%;
     transform: translateY(-120px);
     padding: 0;
     line-height: 80%;
@@ -432,27 +433,33 @@ footer {
 
 .footer_elements {
     display: flex;
-    gap: 48px;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
 }
 
-.footer_link {
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    font-style: normal;
-    display:flex;
+.copyright_img_container {
+    display: flex;
+    align-self: center;
 }
 
 .copyright_elements {
-    height: auto;
+    display: flex;
 }
 
 .copyright_img {
     object-fit: contain;
+    height: 18px;
+    width: auto;
+    display: block;
+}
+
+.white_color {
+    color: white;
 }
 
 /* ------->MOBILE SCREEN------------------------------*/
@@ -556,6 +563,28 @@ footer {
         background-color: var(--third-bg-color);
     }
 
+    .headline_and_rating_container { 
+        flex-direction: column;
+        gap: 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .slogan {
+        -webkit-line-clamp: 2;
+        line-height: normal;
+    }
+
+    .dishes_navigation_container {
+       margin-top: -40px;
+       padding-right: 8px;
+    }
+    .dishes_navigation {
+        gap: 16px;
+    }
+
     .main_dishes_category_container {
         margin-left: 0;  
     }
@@ -565,7 +594,7 @@ footer {
     }
 
     #category_container{
-    width: 100%;
+        width: 100%;
     }
 
     .main_dishes {
@@ -619,66 +648,124 @@ footer {
     }
 
     .full_basket_dish_name {
-    color: var(--third-bg-color);
+        color: var(--third-bg-color);
     }
 
     .mobile_fullscreen .headline_basket {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .close_mobile_basket_btn {
-    display: flex;
-    justify-content: flex-end;
-    border-width: 0;
-    border-radius: 8px;
-    font-size: 24px;
-    color: var(--secondary-bg-color);
-    background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        border-width: 0;
+        border-radius: 8px;
+        font-size: 24px;
+        color: var(--secondary-bg-color);
+        background-color: transparent;
     }
     
     .mobile_basket_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 680px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 680px;
     }  
 
     .basket_content, .full_basket_dish_name, .delete_btn_basket, .increase_btn {
-    font-size: 32px;
+        font-size: 32px;
     }
 
     .basket_content {
-    padding: 0;
+        padding: 0;
     }
 
     #mobile_basket_costs {
-    width: 100%; 
+        width: 100%; 
     }
 
     .calculate_costs {
-    font-size: 32px;
+        font-size: 32px;
+    }
+
+    a:hover {
+    transform: none;
+    text-shadow:
+    0 0 7px #f0e8ac; 
     }
 
     body {
-    padding-bottom: 60px;
+        padding-bottom: 60px;
     }
 }
 
-@media (max-width:380px){
+@media (max-width:400px){
+
+    a {
+       display: block;
+    }
+
+    h1 {
+        font-size: 1.25em;
+    }
+
+    .headline {
+        font-size: 32px;
+    }
+
+    .dishes_navigation {
+        display: inline-block;
+        text-align: center;
+        gap: 8px;
+        padding-left: 4px;
+    }
+
+    .category_orange_bg {
+        margin-top: 12px;
+    }
+
+    .main_dishes_category_container {
+        gap: 8px;
+    }
+
+    #main_dishes_category {
+        line-height: 200%;
+    }
+    
+    .category_img_container {
+        margin-top: -40px;
+    }
+
     .basket_content, .full_basket_dish_name, .delete_btn_basket, .increase_btn {
-    font-size: 24px;
+        font-size: 24px;
     }
 
     .font_basket {
-    width: 100%;
-    font-size: 24px;
+        width: 100%;
+        font-size: 24px;
     }
     
     .calculate_costs {
-    font-size: 24px;
+        font-size: 24px;
     }
+
+    footer {
+        margin-top: 18px;
+        height: 100px;
+    }
+
+    .footer_elements {
+        padding: 8px;
+        flex-direction: column;
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    
+
+
 }
     
 

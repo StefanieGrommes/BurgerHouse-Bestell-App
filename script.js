@@ -80,8 +80,8 @@ function renderCost(){
 }
 
 function decreaseItem(mealId){
-    let index = -1;  //index ist nicht gefunden
-    for (let i = 0; i < basket.length; i++) { //gehe den warenkrob durch, bis die basket.id gleich der meal.id ist
+    let index = -1;  
+    for (let i = 0; i < basket.length; i++) { 
     if (basket[i].id === mealId) {
         index = i; break;
         }
@@ -97,8 +97,8 @@ function decreaseItem(mealId){
 }
 
 function deleteItem(mealId){
-    let index = -1;  //index ist nicht gefunden
-    for (let i = 0; i < basket.length; i++) { //gehe den warenkrob durch, bis die basket.id gleich der meal.id ist
+    let index = -1;  
+    for (let i = 0; i < basket.length; i++) { 
     if (basket[i].id === mealId) {
         index = i;
         break;
@@ -106,7 +106,7 @@ function deleteItem(mealId){
     }
     if (index === -1) return;
     basketDish = basket[index];
-    basket.splice(index, 1); //lösche das Gericht mit dem index
+    basket.splice(index, 1); 
     renderBasketDishes();
     basketDish.amount = 0;
     changeOrderBtn(basketDish);
@@ -157,8 +157,8 @@ function changeOrderBtn(meal){
     }
     
 function increaseAmount(mealId){
-    let index = -1;  //index ist nicht gefunden
-    for (let i = 0; i < basket.length; i++) { //gehe den warenkrob durch, bis die basket.id gleich der meal.id ist
+    let index = -1;  
+    for (let i = 0; i < basket.length; i++) { 
     if (basket[i].id === mealId) {
         index = i;
         break;
